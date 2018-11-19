@@ -1,0 +1,44 @@
+.page-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: [headerStart] 10vh [headerEnd] auto; 
+    grid-template-areas: 
+    "header header header"
+    "sideBar main main";
+}
+
+.navigation-container {
+    position: fixed;
+    height: 10vh;
+    width: 100vw;
+    background-color: #3d3d3d;
+}
+
+
+.toolBar-container {
+    grid-area: sideBar;
+    grid-row-start: headerEnd;
+    background-color: #fafafa;
+    /* height used as place holder */
+    height: 190vh;    
+}
+ 
+
+.list-container {
+    grid-area: main;
+    grid-row-start: headerEnd;
+    background-color: #ffffff;
+    /* height used as place holder */
+    height: 90vh;
+}
+
+@media only screen and (max-device-width: 480px) {
+    .page-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: [headerStart] 10vh [headerEnd] auto; 
+        grid-template-areas: 
+        "header header header"
+        "main main main";
+    }
+}
